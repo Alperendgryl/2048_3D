@@ -5,21 +5,18 @@ public class FX : MonoBehaviour
     [SerializeField] private ParticleSystem cubeExplosionFX;
     [SerializeField] private AudioSource[] cubeSfx;
 
-    //singleton
-    public static FX Instance;
+    public static FX Instance; //singleton
 
     private void Awake()
     {
         Instance = this;
     }
 
-    public void PlayCubeExplosionFX(Vector3 position, Color color)
+    public void PlayCubeFX(Vector3 position, Color color)
     {
         cubeExplosionFX.transform.position = position;
-
         color.a = 1;
         cubeExplosionFX.startColor = color;
-
         cubeExplosionFX.Play();
 
         cubeSfx[1].Play(); // concatenated
@@ -27,19 +24,22 @@ public class FX : MonoBehaviour
 
     public void PlayMiss()
     {
-        if (cubeSfx != null)
+        if (cubeSfx != null) // !concatenated = 0 ,concatenated = 1
         {
-            if (!cubeSfx[0].isPlaying) cubeSfx[0].Play(); // !concatenated = 0 ,concatenated = 1
+            if (!cubeSfx[0].isPlaying)
+            {
+                cubeSfx[0].Play();
+            } 
             else cubeSfx[0].Stop();
         }
 
     }
 
-    public void PlayThrow()
+    public void PlayThrowFX()
     {
-        if (cubeSfx != null && !cubeSfx[2].isPlaying)
+        if (cubeSfx != null && !cubeSfx[2].isPlaying) 
         {
-            cubeSfx[2].Play(); // !concatenated = 0 ,concatenated = 1
+            cubeSfx[2].Play();
         }
     }
 }

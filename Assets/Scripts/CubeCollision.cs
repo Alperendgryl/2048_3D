@@ -51,12 +51,13 @@ public class CubeCollision : MonoBehaviour
                         coll.attachedRigidbody.AddExplosionForce(explosionForce, contactPoint, explosionRadius);
                 }
 
-                FX.Instance.PlayCubeExplosionFX(contactPoint, cube.cubeColor);
+                FX.Instance.PlayCubeFX(contactPoint, cube.cubeColor);
+                
             }
-            else
-            {
-                FX.Instance.PlayMiss(); //Not concatenated
-            }
+            //else
+            //{
+            //    FX.Instance.PlayMiss(); //Not concatenated
+            //}
         }
     }
 }

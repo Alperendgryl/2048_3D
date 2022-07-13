@@ -16,7 +16,6 @@ public class UIManager : MonoBehaviour
 
     [Header("GameObject")]
     [SerializeField] private GameObject endPanel;
-    [SerializeField] private GameObject startPanel;
 
     void Start()
     {
@@ -42,6 +41,7 @@ public class UIManager : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene(0);
+        CubeCollision.currentScore = 0;
     }
 
     IEnumerator gameEnded()
@@ -49,7 +49,6 @@ public class UIManager : MonoBehaviour
         RedZone.gameEnded = false;
         yield return new WaitForSeconds(1.5f);
         endPanel.SetActive(true);
-        startPanel.SetActive(false);
         CubeCollision.currentScore = 0;
     }
 }

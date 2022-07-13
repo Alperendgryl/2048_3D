@@ -14,8 +14,8 @@ public class CubeSpawner : MonoBehaviour
     [SerializeField] private GameObject cubePrefab;
     [SerializeField] private Color[] cubeColors;
 
-    [HideInInspector] public int maxCubeNumber; // 4096
-    private int maxPower = 12; // (2^12)
+    [HideInInspector] public int maxCubeNumber; // 8192
+    private int maxPower = 13; // (2^12)
 
     private Vector3 defaultSpawnPosition;
 
@@ -84,9 +84,10 @@ public class CubeSpawner : MonoBehaviour
         cubesQueue.Enqueue(cube);
     }
 
+    private int maxCubePower;
     public int RandomNumber()
     {
-        return (int)Mathf.Pow(2, Random.Range(1, 6)); //Between 2^1 - 2^5
+        return (int)Mathf.Pow(2, Random.Range(1, 7)); //Between 2^1 - 2^6 = 2 - 64
     }
 
     private Color GetColor(int number)

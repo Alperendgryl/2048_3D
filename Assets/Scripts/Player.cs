@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] private TouchSlider touchSlider;
     [SerializeField] private Cube mainCube;
+    [SerializeField] private GameObject slider;
 
     private bool isPointerDown;
     private bool canMove;
@@ -22,7 +23,7 @@ public class Player : MonoBehaviour
         eventListener();
     }
 
-    private void Update()
+    private void Update()   
     {
         if (isPointerDown)
             mainCube.transform.position = Vector3.Lerp(
@@ -64,7 +65,8 @@ public class Player : MonoBehaviour
     {
         if (isPointerDown && canMove)
         {
-            FX.Instance.PlayThrow();
+            slider.SetActive(false); // After throwing, player cannot change the position of the cube until new cube is spawned. (slider deactivated)
+            FX.Instance.PlayThrowFX();
             isPointerDown = false;
             canMove = false;
 
@@ -76,6 +78,7 @@ public class Player : MonoBehaviour
 
     private void SpawnNewCube()
     {
+        slider.SetActive(true); //(slider activated)
         mainCube.isMainCube = false;
         canMove = true;
         SpawnCube();

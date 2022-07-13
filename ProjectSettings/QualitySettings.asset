@@ -190,7 +190,7 @@ QualitySettings:
     name: Ultra
     pixelLightCount: 4
     shadows: 1
-    shadowResolution: 0
+    shadowResolution: 1
     shadowProjection: 1
     shadowCascades: 4
     shadowDistance: 100

@@ -14,11 +14,14 @@ public class Cube : MonoBehaviour
 
     private MeshRenderer cubeMeshRenderer;
 
+    public static TrailRenderer trailRenderer;
+
     private void Awake()
     {
         cubeID = staticID++;
         cubeMeshRenderer = GetComponent<MeshRenderer>();
         cubeRigidbody = GetComponent<Rigidbody>();
+        trailRenderer = GetComponent<TrailRenderer>();
     }
 
     public void setColor(Color color)

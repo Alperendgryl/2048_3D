@@ -8,7 +8,7 @@ public class RedZone : MonoBehaviour
 
         if (cube != null)
         {
-            if (!cube.isMainCube && cube.cubeRigidbody.velocity.magnitude < .1f)
+            if (!cube.isMainCube)
             {
                 gameEnded = true;
             }
