@@ -83,8 +83,7 @@ public class CubeSpawner : MonoBehaviour
         cube.gameObject.SetActive(false);
         cubesQueue.Enqueue(cube);
     }
-
-    private int maxCubePower;
+    
     public int RandomNumber()
     {
         return (int)Mathf.Pow(2, Random.Range(1, 7)); //Between 2^1 - 2^6 = 2 - 64
