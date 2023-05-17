@@ -1,4 +1,12 @@
 # 2048_3D
 
-https://user-images.githubusercontent.com/64389723/178551857-36fcd6e8-5b88-459a-9187-f13c67cb0cc8.mp4
+Hold & Drag & Release to add force to the cube.
+
+
+
+https://user-images.githubusercontent.com/64389723/179398681-f564bb28-78d2-4e70-832b-aec0ee1d891c.mp4
+
+
+
+
 
